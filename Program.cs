@@ -51,12 +51,37 @@ var sampleDocument = new Account
     AccountType = "checking",
     Balance = 50352435
 };
+#region Find
+//var accounts = await accountsCollection.FindAsync(
+//    a=> a.AccountId.Length>0);
+//var account = accounts.First();
+//Console.WriteLine(account.AccountHolder);
+#endregion
 
-var accounts = await accountsCollection.FindAsync(
-    a=> a.AccountId == "MDB829001338");
-var account = accounts.FirstOrDefault();
-Console.WriteLine(account.AccountHolder);
+#region Update
+//var filter = Builders<Account>
+//   .Filter
+//   .Eq(a => a.AccountId, "MDB829001337");
 
-// TODO: Create an expression which inserts a single document into the `accounts` collection below:
+//var update = Builders<Account>
+//   .Update
+//   .Set(a => a.Balance, 5000);
+
+//var result = accountsCollection.UpdateOne(filter, update);
+
+//Console.WriteLine(result.ModifiedCount);
+#endregion
+
+#region Create
 //accountsCollection.InsertOne(sampleDocument);
-// TODO: Create an expression which inserts a single document into the `accounts` collection below:
+#endregion
+
+#region Delete
+//var accountCollection =
+//  database.GetCollection<Account>("Account");
+
+//var result = accountsCollection
+//   .DeleteOne(a => a.AccountId == "MDB829001338");
+
+//Console.WriteLine(result.DeletedCount);
+#endregion

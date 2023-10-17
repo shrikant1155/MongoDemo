@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using MongoTraining.Models;
+using System.Xml.Linq;
 
 var mongoURL = new MongoUrl("mongodb+srv://shrikant:cyb123456@cluster0.nma8moq.mongodb.net/?retryWrites=true&w=majority");
 #region MyRegion
@@ -51,8 +52,11 @@ var sampleDocument = new Account
     Balance = 50352435
 };
 
-
+var accounts = await accountsCollection.FindAsync(
+    a=> a.AccountId == "MDB829001338");
+var account = accounts.FirstOrDefault();
+Console.WriteLine(account.AccountHolder);
 
 // TODO: Create an expression which inserts a single document into the `accounts` collection below:
-accountsCollection.InsertOne(sampleDocument);
+//accountsCollection.InsertOne(sampleDocument);
 // TODO: Create an expression which inserts a single document into the `accounts` collection below:
